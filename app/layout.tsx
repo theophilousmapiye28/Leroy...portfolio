@@ -13,7 +13,7 @@ import Expereince from '../components/Expereince';
 import  Tools from '../components/Tools';
 import  Portfolio from '../components/Portfolio';
 import Contact from "../components/Contact";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 
 
 
