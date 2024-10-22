@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
+  /* header */
+  @font-face {
+    font-family: 'Chillax';
+    src: url('/fonts/Chillax-Bold.woff') format('woff'),
+         url('/fonts/Chillax-Medium.ttf') format('ttf');
+         
+    font-weight: normal; /* or bold, specify different fonts for bold/italic */
+    font-style: normal;  /* or italic */
+  }
+
+  /* Example of setting a fallback font */
+  body {
+    font-family: 'YourCustomFont', sans-serif;
+  }
+  
+  
+
+  
+  
+
+
+  .logo {
+    color:white;
+    display:inline-lock;
+    font-weight: 600;
+  }
+  .header {
+      background-color: #000000;
+      box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+      position: fixed;
+      width: 100%;
+      z-index: 3;
+  }
+  
+  .header ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+      background-color: #00000000;
+      font-weight: 600;
+  }
+  
+  .header li a {
+      display: block;
+      padding: 20px 20px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+      background-color: #f4f4f400;
+  }
+  
+  .header .logo {
+      display: block;
+      float: left;
+      font-size: 2em;
+      margin-left: 30px;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+  }
+  
+  /* menu */
+  
+  .header .menu {
+      clear: both;
+      max-height: 0;
+      transition: max-height .2s ease-out;
+  }
+  
+  /* menu icon */
+  
+  .header .menu-icon {
+      cursor: pointer;
+      display: inline-block;
+      float: right;
+      padding: 28px 20px;
+      position: relative;
+      user-select: none;
+  }
+  
+  .header .menu-icon .navicon {
+      background: wheat;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background .2s ease-out;
+      width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+      background: #fff;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+      top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+      top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+      display: none;
+  }
+  
+  .header .menu-btn:checked ~ .menu {
+      max-height: 240px;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+      background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+      transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+      transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+      top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+      .header li {
+          float: left;
+      }
+      .header li a {
+          padding: 22px 14px;
+      }
+      .header .menu {
+          clear: none;
+          float: right;
+          max-height: none;
+      }
+      .header .menu-icon {
+          display: none;
+      }
+  }
+
+/* 
+  .home{
+    background: url(../public/images/dark-mode-black-late-night-work-inspiration.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+   padding-left: 20vh;
+    justify-content: center;
+   
+  }
+
+  .home p{
+   color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .home h3{
+    font-size: 40px;
+    color: #fff;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+
+   
+  .home span{
+    color: #dd236a;
+     
+   } */
+
+   .home {
+    background: url(../public/WhatsApp\ Image\ landing.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5vw; /* Adjust padding for smaller screens */
+    justify-content: center;
+  }
+  
+  .home p {
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .home h3 {
+    color: #fff;
+  }
+  
+  .home span {
+    color: b ;
+  }
+  
+.about-content{
+    display: flex;
+    flex-direction: row;
+   
+}
+
+
+
+   .Workexperience p{
+    text-decoration: dotted;
+   }
+
+
+/* Default styles */
+.about-content {
+  display: flex;
+  flex-direction: column-reverse; /* For small screens, put image below the heading */
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about-content img {
+  max-width: 80%;
+  height: auto;
+  padding-top: 10px;
+}
+
+/* Media query for screens larger than 768px (tablet and up) */
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row; /* For larger screens, use row layout */
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .about-content img {
+    max-width: 50%; /* Adjust image size for larger screens */
+  }
+}
+
+   .footer{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+   }
+ 
+  
